@@ -80,15 +80,18 @@ fun MainContent() {
     Spacer(modifier = Modifier.height(20.dp))
 
     // 詳細表示ボタン
+    var isShowDetail = false
     Button(
       modifier = Modifier.fillMaxWidth(),
       colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFF85F6A)),
-      onClick = { /*TODO*/ }) {
+      onClick = { isShowDetail = !isShowDetail }) {
       Text(text = "詳細を表示", color = Color.White)
     }
     Spacer(modifier = Modifier.height(20.dp))
 
     // 趣味と居住地セクション
-    DetailSection()
+    if (isShowDetail) {
+      DetailSection()
+    }
   }
 }
