@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.jetpackprofile.components.Label
 import com.example.jetpackprofile.ui.theme.JetpackProfileTheme
 
 class MainActivity : ComponentActivity() {
@@ -135,26 +136,5 @@ class MainActivity : ComponentActivity() {
         }
       }
     }
-  }
-}
-
-@Composable
-fun Label(
-  icon: ImageVector,
-  text: String,
-  color: Color = MaterialTheme.colors.onBackground,
-) {
-  Row(verticalAlignment = Alignment.CenterVertically) {
-    Icon(
-      imageVector = icon,
-      contentDescription = null,
-    )
-    Spacer(modifier = Modifier.width(10.dp))
-    Text(
-      text = text,
-      color = color,
-      fontSize = 14.sp,
-      fontWeight = FontWeight.Bold,
-    )
   }
 }
