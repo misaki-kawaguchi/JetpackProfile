@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackprofile.components.CompanySection
+import com.example.jetpackprofile.components.DetailSection
 import com.example.jetpackprofile.components.Label
 import com.example.jetpackprofile.ui.theme.JetpackProfileTheme
 
@@ -79,26 +80,7 @@ class MainActivity : ComponentActivity() {
             Spacer(modifier = Modifier.height(20.dp))
 
             // 趣味と居住地セクション
-            Column(
-              modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(10.dp))
-                .background(Color.LightGray.copy(alpha = 0.3f))
-                .padding(horizontal = 10.dp, vertical = 20.dp)
-            ) {
-              Label(
-                icon = Icons.Default.Favorite,
-                text = "趣味：映画鑑賞",
-                color = Color.Gray,
-              )
-              Spacer(modifier = Modifier.height(10.dp))
-
-              Label(
-                icon = Icons.Default.LocationOn,
-                text = "居住地：東京都",
-                color = Color.Gray,
-              )
-            }
+            DetailSection()
           }
         }
       }
