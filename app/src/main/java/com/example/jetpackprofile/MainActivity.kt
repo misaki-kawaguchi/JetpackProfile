@@ -35,55 +35,60 @@ class MainActivity : ComponentActivity() {
       JetpackProfileTheme {
         // A surface container using the 'background' color from the theme
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-          Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(20.dp)
-          ) {
-
-            // プロフィール画像
-            Image(
-              painter = painterResource(id = R.drawable.img_profile),
-              contentDescription = "プロフィール",
-              modifier = Modifier
-                .size(100.dp)
-                .clip(RoundedCornerShape(10.dp))
-            )
-            Spacer(modifier = Modifier.height(20.dp))
-
-            // 名前
-            Text(
-              text = "山田 太郎",
-              color = Color.Gray,
-              fontSize = 16.sp,
-              fontWeight = FontWeight.ExtraBold,
-            )
-            Spacer(modifier = Modifier.height(20.dp))
-
-            // 職業
-            Text(
-              text = "職業：エンジニア",
-              color = Color.Gray,
-              fontSize = 16.sp,
-            )
-            Spacer(modifier = Modifier.height(20.dp))
-
-            CompanySection()
-            Spacer(modifier = Modifier.height(20.dp))
-
-            // 詳細表示ボタン
-            Button(
-              modifier = Modifier.fillMaxWidth(),
-              colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFF85F6A)),
-              onClick = { /*TODO*/ }) {
-              Text(text = "詳細を表示", color = Color.White)
-            }
-            Spacer(modifier = Modifier.height(20.dp))
-
-            // 趣味と居住地セクション
-            DetailSection()
-          }
+          MainContent()
         }
       }
     }
+  }
+}
+
+@Composable
+fun MainContent() {
+  Column(
+    horizontalAlignment = Alignment.CenterHorizontally,
+    modifier = Modifier.padding(20.dp)
+  ) {
+
+    // プロフィール画像
+    Image(
+      painter = painterResource(id = R.drawable.img_profile),
+      contentDescription = "プロフィール",
+      modifier = Modifier
+        .size(100.dp)
+        .clip(RoundedCornerShape(10.dp))
+    )
+    Spacer(modifier = Modifier.height(20.dp))
+
+    // 名前
+    Text(
+      text = "山田 太郎",
+      color = Color.Gray,
+      fontSize = 16.sp,
+      fontWeight = FontWeight.ExtraBold,
+    )
+    Spacer(modifier = Modifier.height(20.dp))
+
+    // 職業
+    Text(
+      text = "職業：エンジニア",
+      color = Color.Gray,
+      fontSize = 16.sp,
+    )
+    Spacer(modifier = Modifier.height(20.dp))
+
+    CompanySection()
+    Spacer(modifier = Modifier.height(20.dp))
+
+    // 詳細表示ボタン
+    Button(
+      modifier = Modifier.fillMaxWidth(),
+      colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFF85F6A)),
+      onClick = { /*TODO*/ }) {
+      Text(text = "詳細を表示", color = Color.White)
+    }
+    Spacer(modifier = Modifier.height(20.dp))
+
+    // 趣味と居住地セクション
+    DetailSection()
   }
 }
