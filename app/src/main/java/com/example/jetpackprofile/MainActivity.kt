@@ -37,7 +37,9 @@ class MainActivity : ComponentActivity() {
             Image(
               painter = painterResource(id = R.drawable.img_profile),
               contentDescription = "プロフィール",
-              modifier = Modifier.size(100.dp).clip(RoundedCornerShape(10.dp))
+              modifier = Modifier
+                .size(100.dp)
+                .clip(RoundedCornerShape(10.dp))
             )
             Spacer(modifier = Modifier.height(20.dp))
 
@@ -56,6 +58,28 @@ class MainActivity : ComponentActivity() {
               color = Color.Gray,
               fontSize = 16.sp,
             )
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Column(
+              horizontalAlignment = Alignment.Start,
+              modifier = Modifier.fillMaxWidth(),
+            ) {
+              // 会社名
+              // 職業
+              Text(
+                text = "sample株式会社",
+                fontSize = 26.sp,
+                fontWeight = FontWeight.Bold,
+              )
+              Spacer(modifier = Modifier.height(10.dp))
+
+              // 部署
+              Text(
+                text = "テクノロジーグループ",
+                color = Color.Gray,
+                fontSize = 16.sp,
+              )
+            }
           }
         }
       }
