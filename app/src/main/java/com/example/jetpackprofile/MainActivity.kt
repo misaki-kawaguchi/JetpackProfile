@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.jetpackprofile.components.CompanySection
 import com.example.jetpackprofile.components.Label
 import com.example.jetpackprofile.ui.theme.JetpackProfileTheme
 
@@ -65,41 +66,7 @@ class MainActivity : ComponentActivity() {
             )
             Spacer(modifier = Modifier.height(20.dp))
 
-            Column(
-              horizontalAlignment = Alignment.Start,
-              modifier = Modifier.fillMaxWidth(),
-            ) {
-              // 会社名
-              // 職業
-              Text(
-                text = "sample株式会社",
-                fontSize = 26.sp,
-                fontWeight = FontWeight.Bold,
-              )
-              Spacer(modifier = Modifier.height(10.dp))
-
-              // 部署
-              Text(
-                text = "テクノロジーグループ",
-                color = Color.Gray,
-                fontSize = 16.sp,
-              )
-              Spacer(modifier = Modifier.height(20.dp))
-
-              // Email
-              Label(icon = Icons.Default.Email, text = "Email")
-              Spacer(modifier = Modifier.height(10.dp))
-              Text(
-                text = "sample@gmail.com",
-                fontSize = 16.sp,
-              )
-              Spacer(modifier = Modifier.height(5.dp))
-
-              Divider(
-                modifier = Modifier.clip(RoundedCornerShape(1000.dp)),
-                thickness = 2.dp,
-              )
-            }
+            CompanySection()
             Spacer(modifier = Modifier.height(20.dp))
 
             // 詳細表示ボタン
